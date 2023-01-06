@@ -89,8 +89,8 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
-function getPasswordOptions(prompt) {
-return alert(prompt)
+function getPasswordOptions() {
+
 }
 
 
@@ -101,14 +101,20 @@ function getRandom(arr) {
 }
 
 // Function to generate password with user input
+let userInput;
+let passwordLengthSelected = false;
+
 function generatePassword() {
-  getPasswordOptions("How long would you like the password to be?")
+  if (passwordLengthSelected !== true) {  //check if user typed in password length. If no, prompts the user. If yes and it's wrong, reloads the page.
+  userInput = prompt("How long should the password be?");
+  passwordLengthSelected = true; 
 
-return "This is an example password"
+  if (userInput<10 || userInput>64  || isNaN(userInput)) {
+        alert("Please enter a number between 10 and 64 (inclusive)")
+        location.reload()} // checks if user input ins correct and if not reloads the page
+  }
+      return userInput
 }
-
-
-
 
 
 
