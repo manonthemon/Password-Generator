@@ -90,36 +90,40 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
 }
 
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
 }
 
-// Function to generate password with user input
+// variables in the global scope
 let userInput;
 let passwordLengthSelected = false;
 let passwordArray = []
+let flatPasswordArray = []
 
+// Function to generate password with user input
 function generatePassword() {
-  if (passwordLengthSelected !== true) {  //check if user typed in password length. If no, prompts the user. If yes and it's wrong, reloads the page.
-  userInput = prompt("How long should the password be?");
-  passwordLengthSelected = true; 
 
+//first the code checks if user typed in the password length. 
+// If no, prompts the user to enter number of characters.
+if (passwordLengthSelected !== true) {  
+  userInput = prompt("How long should the password be?");
+
+// If yes, checks if correct value entered.
+// if no, alerts user and reloads the page.
+passwordLengthSelected = true; 
   if (userInput<10 || userInput>64  || isNaN(userInput)) {
         alert("Please enter a number between 10 and 64 (inclusive)")
-        location.reload()} // checks if user input ins correct and if not reloads the page
+        location.reload()} 
   }
 
+// Calls function checking prompting user to select password characters
   charCheck()
-  
 }
 
-
-
+// function prompting user to specify types of password characters and pushing selection to new array.
 function charCheck() {
   let lowerCase = confirm("Do you want to add lowercase characters to your password?")
     if (lowerCase == true) { passwordArray.push(lowerCasedCharacters);}
@@ -128,18 +132,20 @@ function charCheck() {
            let numChars = confirm("Do you want to add numbers to your password?")
               if (numChars == true) { passwordArray.push(numericCharacters);}
                let specChars = confirm("Do you want to add special characters to your password?")
-                  if (specChars == true) { passwordArray.push(specialCharacters);}
-   if (passwordArray.length === 0) {
-   alert("You password needs at least one type of character.")
-   location.reload()}
-   else {let flatPasswordArray = passwordArray.flat()
-   return console.log(flatPasswordArray)}
-}
+                  if (specChars == true) { passwordArray.push(specialCharacters);}    
+                  
+// Checks if user made at least one selection. 
+// If no, alerts user and reloads the page.
+// If yes, creates a new, flat array with user-selected character types.
 
+if (passwordArray.length == 0) {
+  alert("You password needs at least one type of character.")
+  location.reload()}
+else {
+  flatPasswordArray = passwordArray.flat()
+  } return console.log(flatPasswordArray)
+} 
 
-
-
-  
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
