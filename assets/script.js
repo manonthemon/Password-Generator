@@ -93,7 +93,7 @@ let userInput;
 let passwordLengthSelected = false;
 let passwordArray = []
 let flatPasswordArray = []
-let password = ''
+
 
 // Function to generate password with user input
 function generatePassword() {
@@ -148,7 +148,7 @@ function createPassword() {
    let randomChar = flatPasswordArray[randomIndex];
     password += randomChar;
   }
-  return alert(password)
+  return alert(password);
 }
 
 // Get references to the #generate element
@@ -157,7 +157,7 @@ var generateBtn = document.querySelector('#generate');
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector('#createPassword.password');
+  var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
 }
