@@ -113,40 +113,27 @@ function generatePassword() {
         alert("Please enter a number between 10 and 64 (inclusive)")
         location.reload()} // checks if user input ins correct and if not reloads the page
   }
-      lowerCase()
-      upperCase() 
-      numChars()
-      specChars()
+
+  charCheck()
   
 }
 
-function lowerCase() {
+
+
+function charCheck() {
   let lowerCase = confirm("Do you want to add lowercase characters to your password?")
-  if (lowerCase == true) {  passwordArray.push(lowerCasedCharacters);
-  return console.log(passwordArray);
-  }
+    if (lowerCase == true) { passwordArray.push(lowerCasedCharacters);}
+      let upperCase = confirm("Do you want to add uppercase characters to your password?")
+        if (upperCase == true) { passwordArray.push(upperCasedCharacters);}
+           let numChars = confirm("Do you want to add numbers to your password?")
+              if (numChars == true) { passwordArray.push(numericCharacters);}
+               let specChars = confirm("Do you want to add special characters to your password?")
+                  if (specChars == true) { passwordArray.push(specialCharacters);
+  return console.log(passwordArray);}
   }
 
-function upperCase() {
- let upperCase = confirm("Do you want to add uppercase characters to your password?")
- if (upperCase == true) { passwordArray.push(upperCasedCharacters);
- return console.log(passwordArray);
-}
-}
   
-function numChars() {
-  let numChars = confirm("Do you want to add numbers to your password?")
-  if (numChars == true) { passwordArray.push(numericCharacters);
-  return console.log(passwordArray);
-}
-}
-  
-function specChars() {
- let specChars = confirm("Do you want to add special characters to your password?")
-  if (specChars == true) { passwordArray.push(specialCharacters);
-  return console.log(passwordArray);
-}
-}
+
   
 
 // Get references to the #generate element
