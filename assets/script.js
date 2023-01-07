@@ -117,9 +117,7 @@ function generatePassword() {
       upperCase() 
       numChars()
       specChars()
-      noChars()
-
-    
+  
 }
 
 function lowerCase() {
@@ -130,34 +128,26 @@ function lowerCase() {
   }
 
 function upperCase() {
-  let upperCase = confirm("Do you want to add uppercase characters to your password?")
-  if (upperCase == true) { passwordArray.push(upperCasedCharacters);
-  return console.log(passwordArray);
-  }
-  }
-
+ let upperCase = confirm("Do you want to add uppercase characters to your password?")
+ if (upperCase == true) { passwordArray.push(upperCasedCharacters);
+ return console.log(passwordArray);
+}
+}
+  
 function numChars() {
   let numChars = confirm("Do you want to add numbers to your password?")
   if (numChars == true) { passwordArray.push(numericCharacters);
   return console.log(passwordArray);
-  }
-  }
-
-function specChars() {
-  let specChars = confirm("Do you want to add special characters to your password?")
-  if (specChars == true) { passwordArray.push(specialCharacters);
-   return console.log(passwordArray);
-  }
-  }
-
-function noChars() {
-  if (passwordArray.length === 0) {
-    alert("You password needs at least one type of characters")
-    location.reload()
-  }
 }
-
-
+}
+  
+function specChars() {
+ let specChars = confirm("Do you want to add special characters to your password?")
+  if (specChars == true) { passwordArray.push(specialCharacters);
+  return console.log(passwordArray);
+}
+}
+  
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
