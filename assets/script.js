@@ -128,9 +128,13 @@ function charCheck() {
            let numChars = confirm("Do you want to add numbers to your password?")
               if (numChars == true) { passwordArray.push(numericCharacters);}
                let specChars = confirm("Do you want to add special characters to your password?")
-                  if (specChars == true) { passwordArray.push(specialCharacters);
-  return console.log(passwordArray);}
-  }
+                  if (specChars == true) { passwordArray.push(specialCharacters);}
+   if (passwordArray.length === 0) {
+   alert("You password needs at least one type of characters")
+   location.reload()}
+   else { return console.log(passwordArray);}
+}
+
 
   
 
