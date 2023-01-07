@@ -88,15 +88,6 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-function getPasswordOptions() {
-}
-
-
-// Function for getting a random element from an array
-function getRandom(arr) {
-}
-
 // variables in the global scope
 let userInput;
 let passwordLengthSelected = false;
@@ -119,8 +110,10 @@ passwordLengthSelected = true;
         location.reload()} 
   }
 
-// Calls function checking prompting user to select password characters
+// Calls function checking prompting user to select password characters.
   charCheck()
+  // Calls function to create a random password.
+  createPassword()
 }
 
 // function prompting user to specify types of password characters and pushing selection to new array.
@@ -146,6 +139,16 @@ else {
   } return console.log(flatPasswordArray)
 } 
 
+//function to generate a random password from the array of character types selected by the user
+function createPassword() {
+  let password = '';
+  for (let i = 0; i < userInput; i++) {
+   let randomIndex = Math.floor(Math.random() * flatPasswordArray.length);
+   let randomChar = flatPasswordArray[randomIndex];
+    password += randomChar;
+  }
+  return console.log(password);
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
