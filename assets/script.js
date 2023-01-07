@@ -130,7 +130,7 @@ function charCheck() {
                let specChars = confirm("Do you want to add special characters to your password?")
                   if (specChars == true) { passwordArray.push(specialCharacters);}
    if (passwordArray.length === 0) {
-   alert("You password needs at least one type of characters")
+   alert("You password needs at least one type of character.")
    location.reload()}
    else { return console.log(passwordArray);}
 }
