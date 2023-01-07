@@ -115,6 +115,8 @@ passwordLengthSelected = true;
   charCheck()
   // Calls function to create a random password.
   createPassword()
+  location.reload()
+  
 }
 
 // function prompting user to specify types of password characters and pushing selection to new array.
@@ -147,20 +149,24 @@ function createPassword() {
    let randomIndex = Math.floor(Math.random() * flatPasswordArray.length);
    let randomChar = flatPasswordArray[randomIndex];
     password += randomChar;
+    
   }
-  return alert(password);
+  return password
 }
 
+
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
+  var passwordText = document.querySelector("#password");
+passwordText.value = createPassword()
+ 
 }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
