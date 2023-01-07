@@ -132,11 +132,12 @@ function charCheck() {
    if (passwordArray.length === 0) {
    alert("You password needs at least one type of character.")
    location.reload()}
-   else { return console.log(passwordArray);}
+   else {let flatPasswordArray = passwordArray.flat()
+   return console.log(flatPasswordArray)}
 }
 
 
-  
+
 
   
 
