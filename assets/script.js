@@ -94,7 +94,6 @@ function getPasswordOptions() {
 }
 
 
-
 // Function for getting a random element from an array
 function getRandom(arr) {
 
@@ -103,6 +102,7 @@ function getRandom(arr) {
 // Function to generate password with user input
 let userInput;
 let passwordLengthSelected = false;
+let passwordArray = []
 
 function generatePassword() {
   if (passwordLengthSelected !== true) {  //check if user typed in password length. If no, prompts the user. If yes and it's wrong, reloads the page.
@@ -113,7 +113,48 @@ function generatePassword() {
         alert("Please enter a number between 10 and 64 (inclusive)")
         location.reload()} // checks if user input ins correct and if not reloads the page
   }
-      return userInput
+      lowerCase()
+      upperCase() 
+      numChars()
+      specChars()
+      noChars()
+
+    
+}
+
+function lowerCase() {
+  let lowerCase = confirm("Do you want to add lowercase characters to your password?")
+  if (lowerCase == true) {  passwordArray.push(lowerCasedCharacters);
+  return console.log(passwordArray);
+  }
+  }
+
+function upperCase() {
+  let upperCase = confirm("Do you want to add uppercase characters to your password?")
+  if (upperCase == true) { passwordArray.push(upperCasedCharacters);
+  return console.log(passwordArray);
+  }
+  }
+
+function numChars() {
+  let numChars = confirm("Do you want to add numbers to your password?")
+  if (numChars == true) { passwordArray.push(numericCharacters);
+  return console.log(passwordArray);
+  }
+  }
+
+function specChars() {
+  let specChars = confirm("Do you want to add special characters to your password?")
+  if (specChars == true) { passwordArray.push(specialCharacters);
+   return console.log(passwordArray);
+  }
+  }
+
+function noChars() {
+  if (passwordArray.length === 0) {
+    alert("You password needs at least one type of characters")
+    location.reload()
+  }
 }
 
 
