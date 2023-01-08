@@ -109,7 +109,6 @@ checkInput()
 
 // Calls function to create a random password and reload the page.
 createPassword()
-
 }
 
 // Function prompting user to specify the length of the password.
@@ -173,10 +172,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = createPassword()
+  passwordArray.length = 0;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+
