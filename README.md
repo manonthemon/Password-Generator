@@ -45,19 +45,12 @@ No installation is required. The deployed webapp can be seen at https://manonthe
 ## Usage
 
 
-This project can serve those wiling to learn more about using JavaScript to code simple web applications.
+This project can serve those wiling to learn more about using JavaScript to code simple web applications. It is also a fully functional password generator.
 
-It is also a fully functional password generator.
-
-## Usage
-
-This project can serve those wiling to learn more about using JavaScript to code simple web applications.
-
-It is also a fully functional password generator.
 
 ## Copyright
 
-I am the sole author of this project. In its making I used some of the following sources:
+I am the sole author of this project. In its making I used ideas and problem solutions some of the following sources:
 
 https://stackoverflow.com/<br>
 https://www.w3schools.com/<br>
