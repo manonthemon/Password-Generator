@@ -108,7 +108,7 @@ function lengthPrompt() {
   if (!passwordLengthSelected) {
     userInput = prompt("How many characters would you like in your password?");
   }
-  if (userInput < 10  && userInput > 0 ) {
+  if (userInput < 10  && Math.sign(userInput) === -1 ) {
     alert("Your password must have at least 10 characters. Please enter the desired number of characters between 10 and 64 (inclusive)");
     window.location.reload(true)
     throw new Error()  // I included these errors to "hard-reset" the page because in Chrome the location.reload() didn't seem to work. It worked fine in other browsers. The errors are not registered in the console.
@@ -152,7 +152,7 @@ function charsPrompts() {
 // Function to check if user made at least one selection. 
 function checkChars() {
   if (flatPasswordArray.length == 0) {
-    alert("You password needs at least one type of character.")
+    alert("You password needs at least one type of character. Try again")
     passwordArray.length = 0
     window.location.reload(true);
     throw new Error()
