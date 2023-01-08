@@ -94,6 +94,8 @@ let passwordLengthSelected = false;
 let passwordArray = [];
 let flatPasswordArray = [];
 
+//The main function controlling the flow of program execution.
+
 function generatePassword() {
 lengthPrompt()
 checkLength()
