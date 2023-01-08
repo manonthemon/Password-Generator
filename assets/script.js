@@ -94,7 +94,6 @@ let passwordLengthSelected = false;
 let passwordArray = [];
 let flatPasswordArray = [];
 
-
 function generatePassword() {
 lengthPrompt()
 checkLength()
@@ -112,17 +111,17 @@ function lengthPrompt() {
   if (userInput < 10  && userInput > 0 ) {
     alert("Your password must have at least 10 characters. Please enter the desired number of characters between 10 and 64 (inclusive)");
     window.location.reload(true)
-    throw new Error('An error occurred')  // I included these errors to "hard-reset" the page because in Chrome the location.reload() didn't seem to work. It worked fine in other browsers. The errors are not registered in the console.
+    throw new Error()  // I included these errors to "hard-reset" the page because in Chrome the location.reload() didn't seem to work. It worked fine in other browsers. The errors are not registered in the console.
     }
   if (userInput > 64) {
     alert("Your password can't have more than 64 characters. Please enter the desired number of characters between 10 and 64 (inclusive)");
     window.location.reload(true)
-    throw new Error('An error occurred') 
+    throw new Error() 
     }
   if (isNaN(userInput)) {
     alert("Please enter the desired number of characters between 10 and 64 (inclusive)");
     window.location.reload(true)
-    throw new Error('An error occurred')
+    throw new Error()
   }  return userInput
 }
 
@@ -132,9 +131,8 @@ function checkLength() {
     alert("Please enter the desired number of characters between 10 and 64 (inclusive)");
     window.location.reload(true);
     passwordArray.length = 0
-    throw new Error('An error occurred');
+    throw new Error();
   }
-
 }
 
 // Function prompting user to specify types of password characters and pushing selection to new array.
@@ -147,19 +145,17 @@ function charsPrompts() {
   if (numChars) { passwordArray.push(numericCharacters); }
   let specChars = confirm("Do you want to add special characters to your password?")
   if (specChars) { passwordArray.push(specialCharacters); }
-  
-  return passwordArray
+  flatPasswordArray = passwordArray.flat()
+  return flatPasswordArray
 }
 
 // Function to check if user made at least one selection. 
 function checkChars() {
-  if (passwordArray.length == 0) {
+  if (flatPasswordArray.length == 0) {
     alert("You password needs at least one type of character.")
-    window.location.reload(true);
     passwordArray.length = 0
-  }
-  else {
-    flatPasswordArray = passwordArray.flat()
+    window.location.reload(true);
+    throw new Error()
   }
 }
 
@@ -187,5 +183,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-
-
