@@ -135,13 +135,13 @@ function lengthPrompt() {
 
 function charPrompts() {
   let lowerCase = confirm("Do you want to add lowercase characters to your password?")
-  if (lowerCase == true) { passwordArray.push(lowerCasedCharacters); }
+  if (lowerCase) { passwordArray.push(lowerCasedCharacters); }
   let upperCase = confirm("Do you want to add uppercase characters to your password?")
-  if (upperCase == true) { passwordArray.push(upperCasedCharacters); }
+  if (upperCase) { passwordArray.push(upperCasedCharacters); }
   let numChars = confirm("Do you want to add numbers to your password?")
-  if (numChars == true) { passwordArray.push(numericCharacters); }
+  if (numChars) { passwordArray.push(numericCharacters); }
   let specChars = confirm("Do you want to add special characters to your password?")
-  if (specChars == true) { passwordArray.push(specialCharacters); }
+  if (specChars) { passwordArray.push(specialCharacters); }
   return passwordArray
 }
 
