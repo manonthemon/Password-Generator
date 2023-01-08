@@ -95,44 +95,44 @@ let passwordArray = [];
 let flatPasswordArray = [];
 flatPasswordArray.length = 0;
 
-// Calls function to generate password with user input
+
 function generatePassword() {
-
-// Calls function prompting user to select password length.
 lengthPrompt()
-
-// Calls function prompting user to select password characters.
-charPrompts()
-
-// Calls function checking pif user selected at least one character type
-checkInput()
-
-// Calls function to create a random password and reload the page.
+checkLength()
+charsPrompts()
+checkChars()
 createPassword()
 }
 
 // Function prompting user to specify the length of the password.
 
 function lengthPrompt() {
-
   if (!passwordLengthSelected) {
     userInput = prompt("How many characters would you like in your password?");
   }
-  if (userInput < 10) {
-    alert("Your password must have at least 10 characters.");
-    location.reload()}
+  if (userInput < 10  && userInput > 0 ) {
+    alert("Your password must have at least 10 characters. Please enter the desired number of characters between 10 and 64 (inclusive)");
+    window.location.reload(true)}
   if (userInput > 64) {
-    alert("Your password can't have more than 64 characters.");
-    location.reload() }
+    alert("Your password can't have more than 64 characters. Please enter the desired number of characters between 10 and 64 (inclusive)");
+    window.location.reload(true) }
   if (isNaN(userInput)) {
-    alert("Please enter a number between 10 and 64 (inclusive)");
-    location.reload();
+    alert("Please enter the desired number of characters between 10 and 64 (inclusive)");
+    window.location.reload(true);
+  }  return userInput
+}
+
+//Function to check if user specified password length
+function checkLength() {
+  if ((!userInput)) {
+    alert("Please enter the desired number of characters between 10 and 64 (inclusive)");
+    window.location.reload(true);
+    passwordArray.length = 0
   }
 }
 
 // Function prompting user to specify types of password characters and pushing selection to new array.
-
-function charPrompts() {
+function charsPrompts() {
   let lowerCase = confirm("Do you want to add lowercase characters to your password?")
   if (lowerCase) { passwordArray.push(lowerCasedCharacters); }
   let upperCase = confirm("Do you want to add uppercase characters to your password?")
@@ -145,11 +145,10 @@ function charPrompts() {
 }
 
 // Function to check if user made at least one selection. 
-
-function checkInput() {
+function checkChars() {
   if (passwordArray.length == 0) {
     alert("You password needs at least one type of character.")
-    location.reload()
+    window.location.reload(true);
   }
   else {
     flatPasswordArray = passwordArray.flat()
